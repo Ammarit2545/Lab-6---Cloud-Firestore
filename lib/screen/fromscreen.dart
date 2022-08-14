@@ -2,9 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_application_1/model/student.dart';
 
 class FromScreen extends StatefulWidget {
-  const FromScreen({Key? key}) : super(key: key);
+  const FromScreen({Key key}) : super(key: key);
 
   @override
   _FromScreenState createState() => _FromScreenState();
@@ -12,6 +13,7 @@ class FromScreen extends StatefulWidget {
 
 class _FromScreenState extends State<FromScreen> {
   final fromKey = GlobalKey<FormState>();
+  Student myStudent = Student();
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,11 @@ class _FromScreenState extends State<FromScreen> {
                   "ชื่อ",
                   style: TextStyle(fontSize: 20),
                 ),
-                TextFormField(),
+                TextFormField(
+                  onSaved: (String fname) {
+                    myStudent.fname = fname;
+                  },
+                ),
                 SizedBox(
                   height: 15,
                 ),
@@ -37,7 +43,11 @@ class _FromScreenState extends State<FromScreen> {
                   "นามสกุล",
                   style: TextStyle(fontSize: 20),
                 ),
-                TextFormField(),
+                TextFormField(
+                  onSaved: (String lname) {
+                    myStudent.lname = lname;
+                  },
+                ),
                 SizedBox(
                   height: 15,
                 ),
@@ -45,7 +55,11 @@ class _FromScreenState extends State<FromScreen> {
                   "Email",
                   style: TextStyle(fontSize: 20),
                 ),
-                TextFormField(),
+                TextFormField(
+                  onSaved: (String email) {
+                    myStudent.email = email;
+                  },
+                ),
                 SizedBox(
                   height: 15,
                 ),
@@ -53,7 +67,11 @@ class _FromScreenState extends State<FromScreen> {
                   "คะแนน",
                   style: TextStyle(fontSize: 20),
                 ),
-                TextFormField(),
+                TextFormField(
+                  onSaved: (String score) {
+                    myStudent.score = score;
+                  },
+                ),
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
@@ -61,7 +79,12 @@ class _FromScreenState extends State<FromScreen> {
                         "บันทึกข้อมูล",
                         style: TextStyle(fontSize: 20),
                       ),
-                      onPressed: () {}),
+                      onPressed: () {
+                        print("${myStudent.fname}");
+                        print("${myStudent.lname}");
+                        print("${myStudent.email}");
+                        print("${myStudent.score}");
+                      }),
                 )
               ],
             ),
