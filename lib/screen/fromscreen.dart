@@ -33,6 +33,8 @@ class _FromScreenState extends State<FromScreen> {
                   style: TextStyle(fontSize: 20),
                 ),
                 TextFormField(
+                  validator:
+                      RequiredValidator(errorText: "กรุณาป้อนชื่อด้วยครับ"),
                   onSaved: (String fname) {
                     myStudent.fname = fname;
                   },
@@ -46,7 +48,7 @@ class _FromScreenState extends State<FromScreen> {
                 ),
                 TextFormField(
                   validator:
-                      RequiredValidator(errorText: "กรุณาป้อชื่อด้วยครับ"),
+                      RequiredValidator(errorText: "กรุณาป้อนนามสกุลด้วยครับ"),
                   onSaved: (String lname) {
                     myStudent.lname = lname;
                   },
@@ -59,6 +61,8 @@ class _FromScreenState extends State<FromScreen> {
                   style: TextStyle(fontSize: 20),
                 ),
                 TextFormField(
+                  validator:
+                      RequiredValidator(errorText: "กรุณาป้อนอีเมลด้วยครับ"),
                   onSaved: (String email) {
                     myStudent.email = email;
                   },
@@ -71,6 +75,8 @@ class _FromScreenState extends State<FromScreen> {
                   style: TextStyle(fontSize: 20),
                 ),
                 TextFormField(
+                  validator:
+                      RequiredValidator(errorText: "กรุณาป้อนคะแนนด้วยครับ"),
                   onSaved: (String score) {
                     myStudent.score = score;
                   },
