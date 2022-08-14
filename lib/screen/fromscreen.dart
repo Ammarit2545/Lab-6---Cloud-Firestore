@@ -68,6 +68,7 @@ class _FromScreenState extends State<FromScreen> {
                   onSaved: (String email) {
                     myStudent.email = email;
                   },
+                  keyboardType: TextInputType.emailAddress,
                 ),
                 SizedBox(
                   height: 15,
@@ -82,6 +83,7 @@ class _FromScreenState extends State<FromScreen> {
                   onSaved: (String score) {
                     myStudent.score = score;
                   },
+                  keyboardType: TextInputType.number,
                 ),
                 SizedBox(
                   width: double.infinity,
