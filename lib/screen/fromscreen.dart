@@ -18,48 +18,50 @@ class _FromScreenState extends State<FromScreen> {
       body: Container(
         padding: EdgeInsets.all(20),
         child: Form(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "ชื่อ",
-                style: TextStyle(fontSize: 20),
-              ),
-              TextFormField(),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "นามสกุล",
-                style: TextStyle(fontSize: 20),
-              ),
-              TextFormField(),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "Email",
-                style: TextStyle(fontSize: 20),
-              ),
-              TextFormField(),
-              SizedBox(
-                height: 15,
-              ),
-              Text(
-                "คะแนน",
-                style: TextStyle(fontSize: 20),
-              ),
-              TextFormField(),
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                    child: Text(
-                      "บันทึกข้อมูล",
-                      style: TextStyle(fontSize: 20),
-                    ),
-                    onPressed: () {}),
-              )
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "ชื่อ",
+                  style: TextStyle(fontSize: 20),
+                ),
+                TextFormField(),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "นามสกุล",
+                  style: TextStyle(fontSize: 20),
+                ),
+                TextFormField(),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "Email",
+                  style: TextStyle(fontSize: 20),
+                ),
+                TextFormField(),
+                SizedBox(
+                  height: 15,
+                ),
+                Text(
+                  "คะแนน",
+                  style: TextStyle(fontSize: 20),
+                ),
+                TextFormField(),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                      child: Text(
+                        "บันทึกข้อมูล",
+                        style: TextStyle(fontSize: 20),
+                      ),
+                      onPressed: () {}),
+                )
+              ],
+            ),
           ),
         ),
       ),
