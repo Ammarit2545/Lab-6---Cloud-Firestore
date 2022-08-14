@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_application_1/model/student.dart';
+import 'package:form_field_validator/form_field_validator.dart';
 
 class FromScreen extends StatefulWidget {
   const FromScreen({Key key}) : super(key: key);
@@ -44,6 +45,8 @@ class _FromScreenState extends State<FromScreen> {
                   style: TextStyle(fontSize: 20),
                 ),
                 TextFormField(
+                  validator:
+                      RequiredValidator(errorText: "กรุณาป้อชื่อด้วยครับ"),
                   onSaved: (String lname) {
                     myStudent.lname = lname;
                   },
@@ -81,11 +84,11 @@ class _FromScreenState extends State<FromScreen> {
                       ),
                       onPressed: () {
                         var formKey;
-                        formKey.currentState.save();
-                        print("${myStudent.fname}");
-                        print("${myStudent.lname}");
-                        print("${myStudent.email}");
-                        print("${myStudent.score}");
+                        if (formKey.currentState.validate()) {
+                          formKey.currentState.save();
+                          print(
+                              "ข้อมูล = ${myStudent.fname} ${myStudent.lname} ${myStudent.email} ${myStudent.score}");
+                        }
                       }),
                 )
               ],
