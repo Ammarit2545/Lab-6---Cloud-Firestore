@@ -19,6 +19,7 @@ class _FromScreenState extends State<FromScreen> {
         padding: EdgeInsets.all(20),
         child: Form(
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
                 "ชื่อ",
@@ -50,6 +51,7 @@ class _FromScreenState extends State<FromScreen> {
               ),
               TextFormField(),
               SizedBox(
+                width: double.infinity,
                 child: ElevatedButton(
                     child: Text(
                       "บันทึกข้อมูล",
