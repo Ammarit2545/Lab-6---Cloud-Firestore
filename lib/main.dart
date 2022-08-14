@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/screen/fromscreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
       length: 2,
       child: Scaffold(
         body: TabBarView(
-          children: [Container(), Container()],
+          children: [FromScreen(), Container()],
         ),
         backgroundColor: Colors.blue,
         bottomNavigationBar: const TabBar(
