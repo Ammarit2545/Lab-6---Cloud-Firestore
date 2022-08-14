@@ -80,6 +80,8 @@ class _FromScreenState extends State<FromScreen> {
                         style: TextStyle(fontSize: 20),
                       ),
                       onPressed: () {
+                        var formKey;
+                        formKey.currentState.save();
                         print("${myStudent.fname}");
                         print("${myStudent.lname}");
                         print("${myStudent.email}");
