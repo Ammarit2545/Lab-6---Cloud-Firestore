@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,9 @@ class _FromScreenState extends State<FromScreen> {
   Student myStudent = Student();
   //Setup Firebade
   final Future<FirebaseApp> firebase = Firebase.initializeApp();
+
+  CollectionReference _studentCollection =
+      FirebaseFirestore.instance.collection("students");
 
   @override
   Widget build(BuildContext context) {
@@ -109,12 +113,16 @@ class _FromScreenState extends State<FromScreen> {
                                 "บันทึกข้อมูล",
                                 style: TextStyle(fontSize: 20),
                               ),
-                              onPressed: () {
-                                var formKey;
-                                if (formKey.currentState.validate()) {
-                                  formKey.currentState.save();
-                                  print(
-                                      "ข้อมูล = ${myStudent.fname} ${myStudent.lname} ${myStudent.email} ${myStudent.score}");
+                              onPressed: () async {
+                                if (fromKey.currentState.validate()) {
+                                  fromKey.currentState.save();
+                                  await _studentCollection.add({
+                                    "fname": myStudent.fname,
+                                    "lname": myStudent.lname,
+                                    "email": myStudent.email,
+                                    "score": myStudent.score
+                                  });
+                                  fromKey.currentState.reset();
                                 }
                               }),
                         )
