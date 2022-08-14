@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: TabBarView(
           children: [Container(), Container()],
         ),
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.blue,
         bottomNavigationBar: const TabBar(
           // ignore: prefer_const_literals_to_create_immutables
           tabs: [
